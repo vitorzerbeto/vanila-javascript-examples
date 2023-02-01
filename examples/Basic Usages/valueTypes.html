@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipos de dados</title>
+  </head>
+  <body></body>
+  <script>
+    /* ### VALORES PRIMITIVOS ### */
+
+    // Undefined
+    const tipoUndefined01;
+    const tipoUndefined02 = undefined;
+
+    console.log('typeof da variável tipoUndefined01: ' + typeof tipoUndefined01);
+    console.log('typeof da variável tipoUndefined02: ' + typeof tipoUndefined02);
+
+    // Boolean
+    const tipoBoolean01 = true;
+    const tipoBoolean02 = false;
+
+    console.log('typeof da variável tipoBoolean01: ' + typeof tipoBoolean01);
+    console.log('typeof da variável tipoBoolean02: ' + typeof tipoBoolean02);
+
+    // Number
+    const tipoNumber01 = 10;
+    const tipoNumber02 = 5.2;
+
+    console.log('typeof da variável tipoNumber01: ' + typeof tipoNumber01);
+    console.log('typeof da variável tipoNumber02: ' + typeof tipoNumber02);
+
+    // BigInt
+    const tipoBigInt01 = BigInt(10);
+
+    console.log('typeof da variável tipoBigInt01: ' + typeof tipoBigInt01);
+
+    // String
+    const tipoString01 = "Salve salve";
+    const tipoString02 = 'Salve salve';
+    const tipoString03 = `Salve salve`;
+
+    console.log('typeof da variável tipoString01: ' + typeof tipoString01);
+    console.log('typeof da variável tipoString02: ' + typeof tipoString02);
+    console.log('typeof da variável tipoString03: ' + typeof tipoString03);
+
+    // Array
+    const tipoArray01 = [0, 1, 2, 3];
+    const tipoArray02 = ['a', 'b', 'c'];
+    const tipoArray03 = [1, 'a', 2, 'b', 3, 'c'];
+
+    console.log('typeof da variável tipoArray01: ' + typeof tipoArray01);
+    console.log('typeof da variável tipoArray02: ' + typeof tipoArray02);
+    console.log('typeof da variável tipoArray03: ' + typeof tipoArray03);
+
+    // Object
+    const tipoObject01 = {
+      nome: "Vitor",
+      idade: 26,
+    };
+
+    const tipoObject02 = {
+      cpf: '222.222.222-22',
+      endereco: {
+        rua: '01',
+        bairro: 'Nova aventura'
+      }
+    };
+
+    console.log('typeof da variável tipoObject01: ' + typeof tipoObject01);
+    console.log('typeof da variável tipoObject02: ' + typeof tipoObject02);
+  </script>
+</html>
