@@ -1,0 +1,14 @@
+{
+  "name": "vanila-javascript-examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:vitorzerbeto/vanila-javascript-examples.git",
+  "author": "<vitor.zerbeto@ifood.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^5.0.0"
+  },
+  "scripts": {
+    "build": "gh-pages -d build"
+  }
+}
