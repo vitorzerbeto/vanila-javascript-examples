@@ -7,9 +7,9 @@
   <title>Conditionals</title>
 </head>
 <body>
-  <label for="weather">Selecione seu signo: </label>
-  <select id="weather">
-    <option value="">--Escolha--</option>
+  <label for="signos">Selecione seu signo: </label>
+  <select id="signos">
+    <option value="">--Escolha seu signo--</option>
     <option value="aries">Áries (21/03 - 20/04)</option>
     <option value="touro">Touro (21/04 - 20/05)</option>
     <option value="gemeos">Gêmeos (21/05 - 20/06)</option>
@@ -27,37 +27,37 @@
   <p></p>
 
   <script>
-    const select = document.querySelector('select');
+    const select = document.getElementById('signos');
     const p = document.querySelector('p');
 
-    select.addEventListener('change', setWeather);
+    select.addEventListener('change', setHoroscopo);
 
-    function setWeather() {
-      let choice = select.value;
+    function setHoroscopo() {
+      let signoEscolhido = select.value;
 
-      if (choice === 'aries') {
+      if (signoEscolhido === 'aries') {
         p.textContent = 'O céu de hoje movimentará o trabalho. Foque nas soluções práticas, elimine tarefas pendentes e determine novas metas profissionais. O momento favorece reformulações e planos de expansão. Valerá também renovar hábitos e dar atenção à saúde. Diminua o estresse e a irritação com meditação e exercícios físicos. Tensões com a equipe ou no ambiente social serão passageiras.';
-      } else if (choice === 'touro') {
+      } else if (signoEscolhido === 'touro') {
         p.textContent = 'Explore seus talentos, crie projetos e aumente a exposição profissional. Esta fase trará conquistas na área financeira e na carreira. Algumas escolhas e filosofias serão repensadas. Você poderá se afastar de um grupo e entrar em outro ou abrir caminhos de trabalho num novo ambiente social. Encontros e interações de hoje incentivarão novos planos. Sucesso!';
-      } else if (choice === 'gemeos') {
+      } else if (signoEscolhido === 'gemeos') {
         p.textContent = 'Dê atenção ao seu mundo interno, aos sonhos e às necessidades pessoais. Assuntos de família e da casa estarão em destaque hoje. Crie um ambiente acolhedor à sua volta e fortaleça a autoestima. Respostas existenciais apontarão caminhos a seguir. Aproveite o impulso de Marte em seu signo para iniciar atividades e projetos. Prestígio e visibilidade profissional em alta!';
-      } else if (choice === 'cancer') {
+      } else if (signoEscolhido === 'cancer') {
         p.textContent = 'Aprofunde vínculos e ordene os pensamentos. Conversas de hoje esclarecerão dúvidas e apontarão rumos. Aproveite esta fase para se fortalecer interiormente, fazer escolhas criteriosas e construir mais segurança para o futuro. Viagens favorecerão o amor e as amizades. Também será bom momento para fazer cursos e firmar relações num novo ambiente.';
-      } else if (choice === 'leao') {
+      } else if (signoEscolhido === 'leao') {
         p.textContent = 'O dia trará bons resultados financeiros no trabalho. Planeje pagamentos, desfaça confusões nas contas e tome cuidado com fraudes. O momento cobrará organização de uma nova rotina e soluções práticas para vencer os desafios da vida pessoal e manter a produtividade. Visualize um novo caminho para o futuro e renove a fé. Inovações na carreira permitirão mais mobilidade.';
-      } else if (choice === 'virgem') {
+      } else if (signoEscolhido === 'virgem') {
         p.textContent = 'Siga a intuição, deixe os relacionamentos fluírem naturalmente e cuide das suas necessidades. O dia trará autoestima e foco nos interesses pessoais. Aos poucos, novo empreendimento ganhará forma. Assuma seu poder e melhore condições de contratos. Diminuir a carga diária será essencial. Administre o tempo com sabedoria e implante uma rotina saudável.';
-      } else if (choice === 'libra') {
+      } else if (signoEscolhido === 'libra') {
         p.textContent = 'Diminua a velocidade e restaure suas forças. O dia pedirá mais atenção ao mundo interior e à família. Arrume as bagunças dentro de você e nos seus espaços. Um plano de viagem poderá se concretizar e abrir novos caminhos. Foque nas soluções práticas e nos projetos pessoais. Construir relações de confiança será essencial para iniciar novas atividades com segurança.';
-      } else if (choice === 'escorpiao') {
+      } else if (signoEscolhido === 'escorpiao') {
         p.textContent = 'Gestos solidários aproximarão amizades. Movimente a vida social e descubra novos focos de interesse. Conversas e interações de hoje inspirarão reflexões importantes que poderão mudar sua maneira de pensar e de se expressar. Amplie conexões e expanda sua rede. O momento favorece divulgação do trabalho e atividades criativas. Clima mágico no amor!';
-      } else if (choice === 'sagitario') {
+      } else if (signoEscolhido === 'sagitario') {
         p.textContent = 'Novas perspectivas na área profissional movimentarão o dia, que favorecerá contatos e inovações no trabalho. Visualize onde quer chegar e conte com maior projeção e popularidade na carreira. O futuro da vida íntima também entrará no menu de hoje. Comece uma fase de mais satisfação e prazer no casamento ou namoro e crie projetos a dois. ';
-      } else if (choice === 'capricornio') {
+      } else if (signoEscolhido === 'capricornio') {
         p.textContent = 'Retome um projeto e amplie conexões com pessoas de fora. O dia trará otimismo e confiança no futuro. Você poderá ter boas notícias de assuntos jurídicos e de trabalho. Planos de viagem e novas atividades animarão o clima. Alargue os horizontes e renove os sentimentos. Com Mercúrio e Plutão em seu signo, objetivos e planos poderão mudar. Aposte em mais flexibilidade.';
-      } else if (choice === 'aquario') {
+      } else if (signoEscolhido === 'aquario') {
         p.textContent = 'Um mergulho nos sentimentos iluminará decisões de vida e escolhas. O dia pedirá privacidade e calma para pensar. Cultive a paz de espírito e curta momentos gostosos de intimidade. A intuição estará aguçada. Os sonhos darão dicas preciosas sobre o processo emocional e as mudanças desejadas. Comece um novo ciclo e dê uma virada na sorte. Conquistas pela frente!';
-      } else if (choice === 'peixes') {
+      } else if (signoEscolhido === 'peixes') {
         p.textContent = 'Crie novos vínculos e impulsione seus projetos. O dia trará novidades, trocas estimulantes e mais leveza nos encontros e interações. Um longo ciclo está chegando ao fim. Renove os sentimentos e invista em mais conforto. Você poderá acelerar uma reforma ou agilizar uma transação imobiliária. Amor em nova dimensão. Embarque num clima romântico e se encante.';
       } else {
         p.textContent = '';
