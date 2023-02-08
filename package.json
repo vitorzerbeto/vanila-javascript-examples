@@ -9,6 +9,6 @@
     "gh-pages": "^5.0.0"
   },
   "scripts": {
-    "build": "gh-pages -d build"
+    "build": "gh-pages -d examples"
   }
 }
