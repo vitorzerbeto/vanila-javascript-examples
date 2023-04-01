@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let pontosJogador1 = 0;
+      let pontosJogador2 = 0;
+
+      console.log(
+        "%cBem-vindo ao jogo de cartas!",
+        "font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)"
+      );
+
+      for (let index = 1; index <= 10; index++) {
+        let resultado = "";
+        const cartaJogador1 = Math.floor(Math.random() * 10) + 1;
+        const cartaJogador2 = Math.floor(Math.random() * 10) + 1;
+
+        if (cartaJogador1 === cartaJogador2) {
+          resultado = "Empate!";
+        } else if (cartaJogador1 > cartaJogador2) {
+          resultado = "Jogador 1 venceu a rodada!";
+          pontosJogador1++;
+        } else {
+          resultado = "Jogador 2 venceu a rodada!";
+          pontosJogador2++;
+        }
+
+        console.log(
+          `%cRodada ${index}`,
+          "font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38)"
+        );
+        console.log(`Jogador 1: ${cartaJogador1}`);
+        console.log(`Jogador 2: ${cartaJogador2}`);
+        console.log(`%c${resultado}`, "font-weight: bold; font-size: 20px");
+        console.log(
+          `%cJogador 1 ${pontosJogador1} x ${pontosJogador2} Jogador 2`,
+          "font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)"
+        );
+
+        if (index < 10 && Math.abs(pontosJogador1 - pontosJogador2) >= 3) {
+          break;
+        }
+      }
+
+      console.log(
+        `%cPlacar final: Jogador 1 ${pontosJogador1} x ${pontosJogador2} Jogador 2`,
+        "font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)"
+      );
+
+      let resultadoFinal;
+      if (pontosJogador1 === pontosJogador2) {
+        resultadoFinal = "O jogo terminou em empate!";
+      } else if (pontosJogador1 > pontosJogador2) {
+        resultadoFinal = "O Jogador 1 é o vencedor!";
+      } else {
+        resultadoFinal = "O Jogador 2 é o vencedor!";
+      }
+
+      console.log(
+        `%c${resultadoFinal}`,
+        "font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)"
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const lista = [];
+      let notaAtual = 0;
+
+      while (notaAtual >= 0) {
+        notaAtual = Number(prompt("Digite uma nota:"));
+
+        if (notaAtual >= 0) {
+          lista.push(notaAtual);
+        }
+      }
+
+      let notaMaisAlta = 0;
+      for (let i = 0; i < lista.length; i++) {
+        if (notaMaisAlta < lista[i]) {
+          notaMaisAlta = lista[i];
+        }
+      }
+
+      let notaMaisBaixa = 11;
+      for (let i = 0; i < lista.length; i++) {
+        if (notaMaisBaixa > lista[i]) {
+          notaMaisBaixa = lista[i];
+        }
+      }
+
+      let media = 0;
+      for (let i = 0; i < lista.length; i++) {
+        media += lista[i];
+      }
+      media = media / lista.length;
+
+      let acimaDaMedia = [];
+      for (let i = 0; i < lista.length; i++) {
+        if (lista[i] >= 6) {
+          acimaDaMedia.push(lista[i]);
+        }
+      }
+
+      // 5, 5.2, 6, 7.6, 8, 9, 9.8
+      console.log("Estatísticas das notas:");
+      console.log(`- Número total de notas: ${lista.length}`);
+      // 7
+      console.log(`- Nota mais alta: ${notaMaisAlta}`);
+      // 9.8
+      console.log(`- Nota mais baixa: ${notaMaisBaixa}`);
+      // 5
+      console.log(`- Média das notas: ${media}`);
+      // 7.2285
+      console.log(`- Notas acíma da média: ${acimaDaMedia.join(", ")}`);
+      // 6, 7.6, 8, 9, 9.8
+    </script>
+  </body>
+</html>

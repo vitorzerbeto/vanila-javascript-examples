@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let notaMaisAlta;
+    let notaMaisBaixa;
+    let mediaDasNotas = 0;
+    let notasAcimaDaMedia = [];
+    let notasSeparadas;
+
+    const notas = prompt('Digite as notas separadas por vírgula:');
+    notasSeparadas = notas.split(',');
+
+    // CONVERTENDO AS NOTAS PARA NUMBER
+    for (let i = 0; i < notasSeparadas.length; i++) {
+      notasSeparadas[i] = Number(notasSeparadas[i]);
+    }
+
+    // CALCULO NOTA MAIS ALTA
+    for (let i = 0; i < notasSeparadas.length; i++) {
+      if(notaMaisAlta < notasSeparadas[i] || notaMaisAlta === undefined) {
+        notaMaisAlta = notasSeparadas[i];
+      }
+    }
+    
+    // CALCULO NOTA MAIS BAIXA
+    for (let i = 0; i < notasSeparadas.length; i++) {
+      if(notaMaisBaixa > notasSeparadas[i] || notaMaisBaixa === undefined) {
+        notaMaisBaixa = notasSeparadas[i];
+      }
+    }
+    
+    // CALCULO MÉDIA DAS NOTAS
+    for (let i = 0; i < notasSeparadas.length; i++) {
+      mediaDasNotas += notasSeparadas[i];
+    }
+    mediaDasNotas = mediaDasNotas / notasSeparadas.length;
+    
+    // CALCULO NOTAS ACIMA DA MÉDIA
+    for (let i = 0; i < notasSeparadas.length; i++) {
+      if(notasSeparadas[i] >= 6) {
+        notasAcimaDaMedia.push(notasSeparadas[i])
+      }
+    }
+
+    alert(`
+      Estatísticas das notas:
+      - Número total de notas: ${notasSeparadas.length}
+      - Nota mais alta: ${notaMaisAlta}
+      - Nota mais baixa: ${notaMaisBaixa}
+      - Média das notas: ${mediaDasNotas}
+      - Notas acima da média: ${notasAcimaDaMedia.join(', ')}
+    `);
+
+
+  </script>
+</body>
+</html>
