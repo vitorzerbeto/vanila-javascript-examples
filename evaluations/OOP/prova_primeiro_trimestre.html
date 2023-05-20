@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prova Primeiro Trimestre</title>
+  </head>
+  <body>
+    <script>
+      let valorTotal = 0;
+      let desejaContinuar = prompt(
+        "Deseja adicionar mais frutas ao seu carrinho?"
+      );
+      while (desejaContinuar === "sim") {
+        let fruta = prompt("Informe a fruta que deseja comprar");
+        let quantidade = Number(prompt("Informe a quantidade, em unidades"));
+        let valorFruta = 0;
+
+        switch (fruta) {
+          case "Banana":
+            valorFruta = 1;
+            break;
+
+          case "Pêra":
+          case "Melancia":
+            valorFruta = 5;
+            break;
+
+          case "Pitaia":
+            valorFruta = 10;
+            break;
+
+          case "Kiwi":
+            valorFruta = 2;
+            break;
+
+          default:
+            alert("A fruta informada não existe :(");
+            valorFruta = 0;
+            break;
+        }
+
+        if (valorFruta !== 0) {
+          valorTotal += quantidade * valorFruta;
+          alert("Fruta adicionada com sucesso!");
+        }
+        desejaContinuar = prompt(
+          "Deseja adicionar mais frutas ao seu carrinho?"
+        );
+      }
+
+      alert(`Valor final da compra: R$${valorTotal}`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let escolha = "";
+      let x, y, resultado;
+
+      while (escolha !== "5") {
+        escolha = prompt(`
+          Escolha uma das seguintes opções:
+          1. subtração
+          2. adição
+          3. divisão
+          4. multiplicação
+          5. sair
+        `);
+
+        switch (escolha) {
+          case "1":
+            x = Number(prompt("Digite o primeiro número"));
+            y = Number(prompt("Digite o segundo número"));
+            resultado = x - y;
+            alert(`${x} - ${y} = ${resultado}`);
+            break;
+
+          case "2":
+            x = Number(prompt("Digite o primeiro número"));
+            y = Number(prompt("Digite o segundo número"));
+            resultado = x + y;
+            alert(`${x} + ${y} = ${resultado}`);
+            break;
+
+          case "3":
+            x = Number(prompt("Digite o primeiro número"));
+            y = Number(prompt("Digite o segundo número"));
+            resultado = x / y;
+            alert(`${x} / ${y} = ${resultado}`);
+            break;
+
+          case "4":
+            x = Number(prompt("Digite o primeiro número"));
+            y = Number(prompt("Digite o segundo número"));
+            resultado = x * y;
+            alert(`${x} * ${y} = ${resultado}`);
+            break;
+
+          case "5":
+            alert("O programa será encerrado");
+            break;
+
+          default:
+            alert("Essa opção é inválida");
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
