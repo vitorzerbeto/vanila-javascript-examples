@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Perfil</title>
+  <style>
+    /* Você não precisa mexer aqui — foco total no JavaScript! */
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+      background: #f0f4f8;
+    }
+    .cartao {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #6c63ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 16px;
+    }
+    button {
+      margin-top: 16px;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 8px;
+      background: #6c63ff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover { background: #574fd6; }
+  </style>
+</head>
+<body>
+
+  <div class="cartao">
+    <div class="avatar">🙂</div>
+
+    <h2 id="nome-usuario">Carregando...</h2>
+    <p id="status-humor">Status: ???</p>
+    <p id="contador-cliques" style="color: gray; font-size: 14px;"></p>
+
+    <button onclick="mudarHumor()">Mudar humor</button>
+  </div>
+
+  <script>
+    // ==============================
+    // PARTE 1 — Escreva seu nome
+    // ==============================
+    // Tarefa: use getElementById para pegar o elemento com id "nome-usuario"
+    // e mude o texto dele para o seu nome.
+
+    // SEU CÓDIGO AQUI:
+
+
+    // ==============================
+    // PARTE 2 — Variáveis de estado
+    // ==============================
+    // Estas variáveis controlam o estado do cartão.
+    // Você vai usá-las nas partes seguintes.
+
+    let humores = ["😄 Animado", "😴 Cansado", "🎮 No modo gamer", "🤔 Pensativo", "🔥 Focado"];
+    let indiceAtual = 0;  // começa no primeiro humor da lista
+    let totalCliques = 0; // começa em zero
+
+
+    // ==============================
+    // PARTE 3 — Função mudarHumor()
+    // ==============================
+    // Esta função já está sendo chamada pelo botão lá em cima (onclick="mudarHumor()").
+    // Você precisa escrever o que ela faz.
+
+    function mudarHumor() {
+      // Passo 1: some 1 no totalCliques
+      // SEU CÓDIGO AQUI:
+
+      // Passo 2: avance o indiceAtual para o próximo humor da lista.
+      // Dica: use o operador % (resto da divisão) para voltar ao início quando chegar no final.
+      // SEU CÓDIGO AQUI:
+
+      // Passo 3: pegue o elemento "status-humor" e mude seu texto para humores[indiceAtual]
+      // SEU CÓDIGO AQUI:
+
+      // Passo 4: pegue o elemento "contador-cliques" e mostre quantas vezes o botão foi clicado
+      // Exemplo de texto: "Você clicou 3 vez(es)"
+      // SEU CÓDIGO AQUI:
+    }
+
+
+    // ==============================
+    // DESAFIO (quem terminar antes)
+    // ==============================
+    // Quando o humor for "🔥 Focado", mude a cor do cartão para laranja.
+    // Dica: document.querySelector(".cartao").style.background = "..."
+    // Não esqueça de voltar à cor branca nos outros humores!
+
+  </script>
+
+</body>
+</html>
