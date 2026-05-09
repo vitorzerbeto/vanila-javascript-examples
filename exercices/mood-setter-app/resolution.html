@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Perfil — Gabarito</title>
+  <style>
+    /* Você não precisa mexer aqui — foco total no JavaScript! */
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+      background: #f0f4f8;
+    }
+    .cartao {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: background 0.3s;
+    }
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #6c63ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 16px;
+    }
+    button {
+      margin-top: 16px;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 8px;
+      background: #6c63ff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover { background: #574fd6; }
+  </style>
+</head>
+<body>
+
+  <div class="cartao">
+    <div class="avatar">🙂</div>
+
+    <h2 id="nome-usuario">Carregando...</h2>
+    <p id="status-humor">Status: ???</p>
+    <p id="contador-cliques" style="color: gray; font-size: 14px;"></p>
+
+    <button onclick="mudarHumor()">Mudar humor</button>
+  </div>
+
+  <script>
+
+    // ==============================
+    // PARTE 1 — Escreve o nome do usuário na tela
+    // ==============================
+
+    // getElementById("nome-usuario") encontra o elemento HTML que tem id="nome-usuario"
+    // .innerText = "..." substitui o texto dentro daquele elemento
+    // Troque "Seu Nome Aqui" pelo seu nome de verdade!
+
+    document.getElementById("nome-usuario").innerText = "Seu Nome Aqui";
+
+
+    // ==============================
+    // PARTE 2 — Variáveis que guardam o estado do cartão
+    // ==============================
+
+    // Um array (lista) com todos os humores possíveis
+    // Os colchetes [] criam a lista, e cada item fica entre aspas separado por vírgula
+    let humores = ["😄 Animado", "😴 Cansado", "🎮 No modo gamer", "🤔 Pensativo", "🔥 Focado"];
+
+    // indiceAtual aponta para qual humor está ativo agora
+    // Começa em 0 porque listas em JavaScript sempre começam no índice 0
+    let indiceAtual = 0;
+
+    // totalCliques conta quantas vezes o botão foi pressionado
+    // Começa em 0 porque ainda não clicamos em nada
+    let totalCliques = 0;
+
+
+    // ==============================
+    // PARTE 3 — Função chamada toda vez que o botão é clicado
+    // ==============================
+
+    function mudarHumor() {
+
+      // Passo 1: soma 1 ao contador de cliques
+      // totalCliques = totalCliques + 1 é o mesmo que totalCliques += 1
+      totalCliques = totalCliques + 1;
+
+
+      // Passo 2: avança para o próximo humor da lista
+      //
+      // O operador % calcula o RESTO da divisão. Ele é o segredo aqui!
+      //
+      // Imagine que a lista tem 5 itens (índices 0, 1, 2, 3, 4):
+      //   - Se indiceAtual era 0 → (0 + 1) % 5 = 1 % 5 = 1  ✅
+      //   - Se indiceAtual era 3 → (3 + 1) % 5 = 4 % 5 = 4  ✅
+      //   - Se indiceAtual era 4 → (4 + 1) % 5 = 5 % 5 = 0  ✅ volta ao início!
+      //
+      // Sem o %, quando chegasse no índice 5, a lista não teria esse item
+      // e o código daria erro. O % resolve isso automaticamente.
+
+      indiceAtual = (indiceAtual + 1) % humores.length;
+
+
+      // Passo 3: pega o humor atual da lista e atualiza o texto na tela
+      // humores[indiceAtual] acessa o item da lista na posição indiceAtual
+      let statusAtual = humores[indiceAtual];
+      document.getElementById("status-humor").innerText = "Status: " + statusAtual;
+
+
+      // Passo 4: mostra quantas vezes o botão foi clicado
+      // O sinal de + entre textos e números os une em uma frase só
+      document.getElementById("contador-cliques").innerText = "Você clicou " + totalCliques + " vez(es)";
+
+
+      // ==============================
+      // DESAFIO — Muda a cor do cartão quando o humor for "🔥 Focado"
+      // ==============================
+
+      // document.querySelector() funciona como getElementById, mas aceita
+      // qualquer seletor CSS — aqui usamos ".cartao" (ponto = classe CSS)
+      let cartao = document.querySelector(".cartao");
+
+      // O if verifica se o humor atual é exatamente "🔥 Focado"
+      // === significa "igual E do mesmo tipo" (mais seguro que ==)
+      if (statusAtual === "🔥 Focado") {
+        cartao.style.background = "#fff3e0"; // laranja bem clarinho
+      } else {
+        cartao.style.background = "white";   // volta ao branco nos outros humores
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
